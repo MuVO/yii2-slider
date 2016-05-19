@@ -1,0 +1,29 @@
+{
+  "name": "muvo/yii2-slider",
+  "version": "0.1.0",
+  "type": "yii2-extension",
+  "description": "HTML widget extension for Yii2 based on bootstrap-slider",
+  "keywords": [
+    "yii2",
+    "slider",
+    "widget",
+    "bootstrap",
+    "html"
+  ],
+  "authors": [
+    {
+      "name": "Vladislav Muschinskikh",
+      "email": "i@unixoid.su"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "^2",
+    "yiisoft/bootstrap": "*"
+    "bower-asset/seiyria-bootstrap-slider": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "muvo\\yii\\slider\\": ""
+    }
+  }
+}
