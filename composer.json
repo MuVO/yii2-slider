@@ -1,6 +1,6 @@
 {
   "name": "muvo/yii2-slider",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "time": "2016-05-19",
   "type": "yii2-extension",
   "description": "HTML widget extension for Yii2 based on bootstrap-slider",
