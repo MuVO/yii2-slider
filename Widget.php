@@ -29,8 +29,8 @@ class Widget extends \yii\bootstrap\Widget
         }elseif(strtolower($this->mode)==='data'){
             $data = [ 'provide' => 'slider' ];
 
-            if(!empty($this->value))
-                $data['slider-value'] = $this->value;
+            if(!empty($this->value)&&!isset($this->sliderOptions['value']))
+                $this->sliderOptions['value'] = $this->value;
 
             foreach($this->sliderOptions as $k=>$v)
                 $data[sprintf('slider-%s',$k)] = $v;
