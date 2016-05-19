@@ -21,6 +21,9 @@ class Widget extends \yii\bootstrap\Widget
         $this->view->registerAssetBundle(SliderAsset::className(),View::POS_BEGIN);
         $this->options['id'] = $this->id;
 
+        if(!empty($this->value)&&!isset($this->sliderOptions['value']))
+            $this->sliderOptions['value'] = $this->value;
+
         if(strtolower($this->mode)==='js'){
             $this->view->registerJs(sprintf('var slider%1$s = window.slider%1$s = new Slider(\'#%2$s\',%3$s);',
                 Inflector::id2camel($this->id),
@@ -28,9 +31,6 @@ class Widget extends \yii\bootstrap\Widget
                 Json::encode($this->sliderOptions)),View::POS_END);
         }elseif(strtolower($this->mode)==='data'){
             $data = [ 'provide' => 'slider' ];
-
-            if(!empty($this->value)&&!isset($this->sliderOptions['value']))
-                $this->sliderOptions['value'] = $this->value;
 
             foreach($this->sliderOptions as $k=>$v)
                 $data[sprintf('slider-%s',$k)] = $v;
