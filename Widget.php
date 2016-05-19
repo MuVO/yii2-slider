@@ -1,6 +1,7 @@
 <?php namespace muvo\yii\slider;
 
 use yii\bootstrap\Html;
+use yii\web\View;
 
 class Widget extends \yii\bootstrap\Widget
 {
@@ -8,10 +9,13 @@ class Widget extends \yii\bootstrap\Widget
     public $name;
     public $value;
     public $sliderOptions = [];
-    public $options = [];
+    public $options = [
+        'class' => 'form-control',
+    ];
 
     public function init(){
-        $this->view->registerAssetBundle(SliderAsset::className());
+        $this->view->registerAssetBundle(SliderAsset::className(),View::POS_BEGIN);
+        $this->options['id'] = $this->id;
     }
 
     public function run(){
