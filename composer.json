@@ -18,7 +18,7 @@
   ],
   "require": {
     "yiisoft/yii2": "^2",
-    "yiisoft/bootstrap": "*",
+    "yiisoft/yii2-bootstrap": "*",
     "bower-asset/seiyria-bootstrap-slider": "*"
   },
   "autoload": {
