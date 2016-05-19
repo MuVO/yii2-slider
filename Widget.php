@@ -8,6 +8,7 @@ class Widget extends \yii\bootstrap\Widget
     public $name;
     public $value;
     public $sliderOptions = [];
+    public $options = [];
 
     public function init(){
         $this->view->registerAssetBundle(SliderAsset::className());
@@ -18,8 +19,8 @@ class Widget extends \yii\bootstrap\Widget
         foreach($this->sliderOptions as $k=>$v)
             $data[sprintf('slider-%s',$k)] = $v;
 
-        return Html::input($this->type,$this->name,$this->value,[
-            'data' => $data,
-        ]);
+        $this->options['data'] = $data;
+
+        return Html::input($this->type,$this->name,$this->value,$this->options);
     }
 }
