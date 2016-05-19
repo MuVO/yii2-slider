@@ -33,7 +33,7 @@ class Widget extends \yii\bootstrap\Widget
         $this->options['data'] = $data;
         */
 
-        $this->view->registerJs(sprintf('<!-- var slider%1$s = window.%1$s = new Slider(\'%2$s\',%3$s) -->',
+        $this->view->registerJs(sprintf('<!-- var slider%1$s = window.%1$s = new Slider(\'#%2$s\',%3$s) -->',
             Inflector::id2camel($this->id),
             $this->id,
             Json::encode($this->sliderOptions)),View::POS_END);
