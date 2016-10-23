@@ -36,11 +36,14 @@ After successful install you can use a slider as general widget in your view-fil
 
 If you don't want to use a native boottrap assets (for example, you theme/layout already has pre-defined bootstrap), you can add  `useNativeBootstrap` option to your widget:
 ```
-                            <?=\muvo\yii\slider\Widget::widget([
-                                'useNativeBootstrap' => false,
-                                'name' => 'slider_1',
-                                …
-                            ])?>
+<div class="col-sm-8">
+    <?=\muvo\yii\slider\Widget::widget([
+        'useNativeBootstrap' => false,
+            'name' => 'call_intensity',
+            'value' => $predefined_value,
+        …
+    ])?>
+</div>
 ```
 
 # Options for widget
