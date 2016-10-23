@@ -1,6 +1,8 @@
 <?php namespace muvo\yii\slider;
 
 use yii\base\InvalidParamException;
+use yii\bootstrap\BootstrapAsset;
+use yii\bootstrap\BootstrapPluginAsset;
 use yii\bootstrap\Html;
 use yii\helpers\Inflector;
 use yii\helpers\Json;
@@ -8,6 +10,7 @@ use yii\web\View;
 
 class Widget extends \yii\bootstrap\Widget
 {
+    public $useNativeBootstrap = true;
     public $type = 'text';
     public $mode = 'js';
     public $name;
@@ -18,7 +21,12 @@ class Widget extends \yii\bootstrap\Widget
     ];
 
     public function init(){
-        $this->view->registerAssetBundle(SliderAsset::className(),View::POS_BEGIN);
+        if($this->useNativeBootstrap==true){
+            \Yii::info('Registering a bootstrap assets',__METHOD__);
+            $this->view->registerAssetBundle(BootstrapAsset::className(),View::POS_HEAD);
+            $this->view->registerAssetBundle(BootstrapPluginAsset::className(),View::POS_HEAD);
+        }
+        $this->view->registerAssetBundle(AssetBundle::className(),View::POS_BEGIN);
         $this->options['id'] = $this->id;
 
         if(!empty($this->value)&&!isset($this->sliderOptions['value']))

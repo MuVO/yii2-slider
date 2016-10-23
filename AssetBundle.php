@@ -1,10 +1,8 @@
 <?php namespace muvo\yii\slider;
 
-use yii\bootstrap\BootstrapAsset;
-use yii\web\AssetBundle;
-
-class SliderAsset extends AssetBundle
+class AssetBundle extends \yii\web\AssetBundle
 {
+    public $useNativeBootstrap = true;
     public $sourcePath = '@bower/seiyria-bootstrap-slider/dist';
     public $css = [
         'css/bootstrap-slider.min.css',
@@ -12,9 +10,4 @@ class SliderAsset extends AssetBundle
     public $js = [
         'bootstrap-slider.min.js',
     ];
-
-    public function init(){
-        parent::init();
-        $this->depends[] = BootstrapAsset::className();
-    }
 }

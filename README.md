@@ -20,7 +20,7 @@ or add following string in your `composer.json` into `require` section:
 
 # Usage
 After successful install you can use a slider as general widget in your view-files, for example:
- ```
+```
     <div>
         <?=\muvo\yii\slider\Widget::widget([
             'name' => 'call_intensity',
@@ -32,7 +32,16 @@ After successful install you can use a slider as general widget in your view-fil
             ],
         ])?>
     </div>
- ```
+```
+
+If you don't want to use a native boottrap assets (for example, you theme/layout already has pre-defined bootstrap), you can add  `useNativeBootstrap` option to your widget:
+```
+                            <?=\muvo\yii\slider\Widget::widget([
+                                'useNativeBootstrap' => false,
+                                'name' => 'slider_1',
+                                …
+                            ])?>
+```
 
 # Options for widget
 Available options, to be passed for config widget:
